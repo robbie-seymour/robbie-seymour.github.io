@@ -33,6 +33,9 @@ jobs:
                 path: |
                   ~/.npm
                 key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}                
+            - name: Configure Git
+              run: |
+                git config --global user.name "robbie-seymour"
             - name: Deploy to GitHub Pages
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
