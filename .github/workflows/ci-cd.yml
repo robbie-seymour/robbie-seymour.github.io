@@ -35,10 +35,10 @@ jobs:
                 key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}                
             - name: Configure Git
               env: 
-                  GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
-                run: |
-                  git config --global user.name "robbie-seymour"
-                  git config --global user.email "${{ secrets.GITHUB_EMAIL }}"
+                GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
+              run: |
+                git config --global user.name "robbie-seymour"
+                git config --global user.email "${{ secrets.GITHUB_EMAIL }}"
             - name: Deploy to GitHub Pages
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
