@@ -1,0 +1,39 @@
+on:
+    push:
+        branches:
+            - main
+            - feature/*
+            - fix/*
+    pull_request:
+      types:
+        - opened
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+              node-version: [22.x]      
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: ${{ matrix.node-version }}
+            - name: Install dependencies
+              run: |
+                echo "Installing dependencies..."
+                npm i --force
+            
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                path: |
+                  ~/.npm
+                key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+            - name: Deploy project
+              run: |
+                npm run deploy
+          
+    
