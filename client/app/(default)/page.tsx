@@ -42,9 +42,9 @@ const LandingPage: React.FC = () => {
                 <h2>Projects</h2>
                 <p>Here are some of my recent projects:</p>
                 <ul>
-                    <li><strong>Project A:</strong> A web application for managing tasks.</li>
-                    <li><strong>Project B:</strong> An e-commerce site built with React and Node.js.</li>
-                    <li><strong>Project C:</strong> A mobile app for tracking fitness activities.</li>
+                    <li><strong>TouchInKeep:</strong> A web application (possible mobile app) for keeping in touch with friends.</li>
+                    <li><strong>Rust of Stake:</strong> A rust based blockchain project using proof of stake (PoS).</li>
+                    <li><strong>Mystery project:</strong> Coming soon...</li>
                 </ul>
             </div>
 
@@ -63,7 +63,7 @@ const LandingPage: React.FC = () => {
             <div id="contact" style={sectionStyle}>
                 <h2>Contact Me</h2>
                 <p>If you'd like to get in touch, feel free to reach out!</p>
-                <p>Email: <a href="mailto:robbie@example.com">robbie@example.com</a></p>
+                <p>Email: <a href="mailto:robseybusiness@gmail.com">robseybusiness@gmail.com</a></p>
             </div>
         </div>
     );
