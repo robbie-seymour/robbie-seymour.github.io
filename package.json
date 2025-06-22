@@ -1,0 +1,41 @@
+{
+  "name": "robbie-seymour.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "npm i && npm run build",
+    "deploy": "gh-pages -d client/build",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "npm start --prefix client",
+    "build": "mkdir build || cd client && npm i && react-scripts build",
+    "refresh": "rmdir /s /q node_modules || echo 'Failed to remove node_modules' && del package-lock.json",
+    "refresh:client": "cd client && npm run refresh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbie-seymour/robbie-seymour.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/robbie-seymour/robbie-seymour.github.io/issues"
+  },
+  "homepage": "https://robbie-seymour.github.io/robbie-seymour.github.io",
+  "dependencies": {
+    "concurrently": "^9.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0",
+    "react": "^19.1.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "nodemon": "^3.1.10"
+  }
+}

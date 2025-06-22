@@ -1,1 +1,1 @@
-# robbie-seymour.gtihub.io
+# robbie-seymour.github.io
