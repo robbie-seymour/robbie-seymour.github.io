@@ -24,8 +24,8 @@ jobs:
             - name: Install dependencies
               run: |
                 echo "Installing dependencies..."
-                npm i --force
-                cd client && npm i --force
+                npm i
+                cd client && npm i
             
             - name: Cache dependencies
               uses: actions/cache@v4
